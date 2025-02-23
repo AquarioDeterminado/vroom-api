@@ -1,0 +1,29 @@
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+.env/
+myenv/
+
+# Logs
+*.log
+
+# MQTT related files
+mosquitto.log
+mosquitto.conf
+
+# IDE / Editor files
+.vscode/
+*.swp
+
+# Dependency files
+Pipfile
+Pipfile.lock
+requirements.txt
+
+# OS-specific files
+.DS_Store
+Thumbs.db

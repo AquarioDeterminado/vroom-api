@@ -1,0 +1,28 @@
+services:
+  broker:
+    build: ./mosquitto
+    image: eclipse-mosquitto
+    volumes:
+      - "./mosquitto:/mosquitto"
+    networks:
+      - iot-network
+    ports:
+      - "1883:1883"
+  node-red:
+    build: ./node-red
+    image: nodered/node-red:latest
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - "1880:1880"
+    networks:
+      - iot-network
+    volumes:
+      - node-red-data:/data
+
+volumes:
+  node-red-data:
+
+
+networks:
+  iot-network:
