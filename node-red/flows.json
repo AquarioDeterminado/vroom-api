@@ -1,0 +1,676 @@
+[
+    {
+        "id": "4abfefc95226429e",
+        "type": "tab",
+        "label": "Ui Control",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "da2e405cc625d4fb",
+        "type": "ui-chart",
+        "z": "4abfefc95226429e",
+        "group": "84dc993d0c56fde2",
+        "name": "Speeds History",
+        "label": "Speeds History",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "15",
+        "removeOlderUnit": "1",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "9",
+        "height": "6",
+        "className": "",
+        "interpolation": "linear",
+        "x": 360,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5864e1dd3acf404f",
+        "type": "link in",
+        "z": "4abfefc95226429e",
+        "name": "battery-ui-in",
+        "links": [
+            "c0764b9d6a8e8171"
+        ],
+        "x": 105,
+        "y": 180,
+        "wires": [
+            [
+                "a4dfe9d48ed78c37",
+                "3ae9f4afe525e8a7"
+            ]
+        ]
+    },
+    {
+        "id": "a4dfe9d48ed78c37",
+        "type": "ui-gauge",
+        "z": "4abfefc95226429e",
+        "name": "Battery Gauge",
+        "group": "968e40306a0e5d09",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gauge-battery",
+        "gstyle": "needle",
+        "title": "Battery Capacity",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "60",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "25",
+                "color": "#ffc800"
+            },
+            {
+                "from": "0",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 360,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "8de93432084d82a9",
+        "type": "link in",
+        "z": "4abfefc95226429e",
+        "name": "speed-ui-in",
+        "links": [
+            "b961cfc39090679a"
+        ],
+        "x": 105,
+        "y": 120,
+        "wires": [
+            [
+                "da2e405cc625d4fb"
+            ]
+        ]
+    },
+    {
+        "id": "f032412d5b6d49d5",
+        "type": "link in",
+        "z": "4abfefc95226429e",
+        "name": "battery-ui-in",
+        "links": [
+            "10bf512b2845bb49"
+        ],
+        "x": 105,
+        "y": 320,
+        "wires": [
+            [
+                "89169a9e7c94b49e"
+            ]
+        ]
+    },
+    {
+        "id": "89169a9e7c94b49e",
+        "type": "ui-gauge",
+        "z": "4abfefc95226429e",
+        "name": "Inclination",
+        "group": "968e40306a0e5d09",
+        "order": 1,
+        "width": "3",
+        "height": "2",
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Vehicle Inclination",
+        "units": "degrees",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "-95",
+                "color": "#ea5353"
+            },
+            {
+                "from": "-80",
+                "color": "#ffc800"
+            },
+            {
+                "from": "-35",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "35",
+                "color": "#ffc800"
+            },
+            {
+                "from": "80",
+                "color": "#ea5353"
+            }
+        ],
+        "min": "-95",
+        "max": "95",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 340,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "01e73c67e54de6c5",
+        "type": "ui-button",
+        "z": "4abfefc95226429e",
+        "group": "b953d24eec769a19",
+        "name": "Up",
+        "label": "Up",
+        "order": 2,
+        "width": "3",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "845405278432f9ec"
+            ]
+        ]
+    },
+    {
+        "id": "845405278432f9ec",
+        "type": "link out",
+        "z": "4abfefc95226429e",
+        "name": "up-ui-out",
+        "mode": "link",
+        "links": [
+            "96650e7ae853d9b4"
+        ],
+        "x": 305,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8c870d3da05a26bc",
+        "type": "ui-button",
+        "z": "4abfefc95226429e",
+        "group": "914b3d12a76ddc3f",
+        "name": "Down",
+        "label": "Down",
+        "order": 2,
+        "width": "3",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "5a853324c43e774c"
+            ]
+        ]
+    },
+    {
+        "id": "5a853324c43e774c",
+        "type": "link out",
+        "z": "4abfefc95226429e",
+        "name": "down-ui-out",
+        "mode": "link",
+        "links": [
+            "aad95e775b50277d"
+        ],
+        "x": 305,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2b515a9d7d031564",
+        "type": "ui-button",
+        "z": "4abfefc95226429e",
+        "group": "410f90407f609d92",
+        "name": "Left",
+        "label": "Left",
+        "order": 1,
+        "width": "3",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 520,
+        "wires": [
+            [
+                "8ce55e31bd8bf49e"
+            ]
+        ]
+    },
+    {
+        "id": "8ce55e31bd8bf49e",
+        "type": "link out",
+        "z": "4abfefc95226429e",
+        "name": "left-ui-out",
+        "mode": "link",
+        "links": [
+            "591c36f5cc43641f"
+        ],
+        "x": 305,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "37ef321bbb561d2c",
+        "type": "ui-button",
+        "z": "4abfefc95226429e",
+        "group": "410f90407f609d92",
+        "name": "Right",
+        "label": "Right",
+        "order": 3,
+        "width": "3",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 580,
+        "wires": [
+            [
+                "cdcad2896a041dc0"
+            ]
+        ]
+    },
+    {
+        "id": "cdcad2896a041dc0",
+        "type": "link out",
+        "z": "4abfefc95226429e",
+        "name": "right-ui-out",
+        "mode": "link",
+        "links": [
+            "c2d1dcfcc494ac62"
+        ],
+        "x": 305,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "3ae9f4afe525e8a7",
+        "type": "debug",
+        "z": "4abfefc95226429e",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "0851420853c812af",
+        "type": "debug",
+        "z": "4abfefc95226429e",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "inject1",
+        "type": "inject",
+        "z": "4abfefc95226429e",
+        "name": "Inject payload",
+        "repeat": "0",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[{\"ID\":\"1\",\"Date\":\"03/03/2025\",\"Duration\":\"90\"},{\"ID\":\"2\",\"Date\":\"04/15/2025\",\"Duration\":\"120\"},{\"ID\":\"3\",\"Date\":\"05/22/2025\",\"Duration\":\"75\"},{\"ID\":\"4\",\"Date\":\"06/10/2025\",\"Duration\":\"60\"},{\"ID\":\"5\",\"Date\":\"07/30/2025\",\"Duration\":\"150\"},{\"ID\":\"6\",\"Date\":\"08/18/2025\",\"Duration\":\"180\"},{\"ID\":\"7\",\"Date\":\"09/05/2025\",\"Duration\":\"110\"}]",
+        "payloadType": "json",
+        "x": 310,
+        "y": 700,
+        "wires": [
+            [
+                "0851420853c812af",
+                "ui_table1"
+            ]
+        ]
+    },
+    {
+        "id": "ui_table1",
+        "type": "ui-table",
+        "z": "4abfefc95226429e",
+        "group": "bc5e2b12dc57b4d2",
+        "name": "Vehicle Data",
+        "label": "",
+        "order": 0,
+        "width": "6",
+        "height": "4",
+        "maxrows": "",
+        "autocols": true,
+        "showSearch": false,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "ID",
+                "key": "",
+                "keyType": "key",
+                "width": "10%"
+            },
+            {
+                "title": "Date",
+                "key": "",
+                "keyType": "key",
+                "width": "30%"
+            },
+            {
+                "title": "Duration",
+                "key": "",
+                "keyType": "key",
+                "width": "30%"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "x": 530,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84dc993d0c56fde2",
+        "type": "ui-group",
+        "name": "speed-graph",
+        "page": "761f894caf8c29a0",
+        "width": "9",
+        "height": "6",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "968e40306a0e5d09",
+        "type": "ui-group",
+        "name": "inclination-battery-counter",
+        "page": "761f894caf8c29a0",
+        "width": "3",
+        "height": "5",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "b953d24eec769a19",
+        "type": "ui-group",
+        "name": "up-button",
+        "page": "761f894caf8c29a0",
+        "width": "9",
+        "height": "2",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "914b3d12a76ddc3f",
+        "type": "ui-group",
+        "name": "down-button",
+        "page": "761f894caf8c29a0",
+        "width": "9",
+        "height": "2",
+        "order": 5,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "410f90407f609d92",
+        "type": "ui-group",
+        "name": "line-4",
+        "page": "761f894caf8c29a0",
+        "width": "9",
+        "height": "2",
+        "order": 4,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "bc5e2b12dc57b4d2",
+        "type": "ui-group",
+        "name": "trip-history",
+        "page": "761f894caf8c29a0",
+        "width": "6",
+        "height": "4",
+        "order": 6,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "761f894caf8c29a0",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "a305fd37e215ef10",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "ce4fde5272828988",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "a305fd37e215ef10",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "dashboard",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true
+    },
+    {
+        "id": "ce4fde5272828988",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    }
+]
