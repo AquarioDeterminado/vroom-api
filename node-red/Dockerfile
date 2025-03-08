@@ -3,16 +3,14 @@ FROM nodered/node-red:latest
 # Set timezone
 ENV TZ=Europe/Amsterdam
 
-# Expose port
-EXPOSE 1880
-
 # Set working directory
 WORKDIR /data
 
-# Copy existing Node-RED configuration (optional)
-COPY settings.js /data/settings.js
+# Ensure package.json exists before running npm install
+RUN [ ! -f "/data/package.json" ] || npm install
 
-# Install dependencies if needed
-RUN npm install
+# Expose Node-RED port
+EXPOSE 1880
 
+# Start Node-RED
 CMD ["npm", "start", "--", "--userDir", "/data"]

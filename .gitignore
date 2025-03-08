@@ -27,3 +27,6 @@ requirements.txt
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+#Files created by me not to be uploaded
+start-up-M-RN.ps1

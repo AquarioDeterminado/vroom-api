@@ -12,3 +12,14 @@
 MQTT Explorer - [https://mqtt-explorer.com/]
 
 Node Red - [http://127.0.0.1:1880]
+
+## Installed Widgets for Red Node
+
+npm i node-red-node-ui-list
+
+## To run the project run:
+Install mosquitto on https://mosquitto.org/download/
+Install Red-Node on https://nodered.org/docs/getting-started/local
+Install necessary Red-Node Widget on https://flows.nodered.org/node/@flowfuse/node-red-dashboard
+run start_services.sh
+run mqtt_sub.py && mqtt-pub.py

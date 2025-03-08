@@ -1,16 +1,25 @@
+
+# NOT WORKING DONT TOUCH
+
+
 services:
   broker:
-    build: ./mosquitto
+    build:
+      context: ./mosquitto/config
     image: eclipse-mosquitto
+    entrypoint: ["mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]
     volumes:
       - "./mosquitto:/mosquitto"
     networks:
       - iot-network
     ports:
       - "1883:1883"
+
   node-red:
     build: ./node-red
     image: nodered/node-red:latest
+    entrypoint: ["node-red"]
+    command: /bin/sh -c "npm i node-red-dashboard && npm start"
     environment:
       - TZ=Europe/Amsterdam
     ports:
