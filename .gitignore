@@ -30,3 +30,7 @@ Thumbs.db
 
 #Files created by me not to be uploaded
 start-up-M-RN.ps1
+
+#Red Node cached files
+data/node_modules
+data/.npm
