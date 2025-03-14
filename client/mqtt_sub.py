@@ -24,7 +24,9 @@ client.subscribe("vehicle/temperature")
 client.subscribe("test_topic")
 
 # information channel of received information
-client.subscribe("ui/moves")
+client.subscribe("vehicle/moves")
+client.subscribe("vehicle/actions")
+
 
 
 try:

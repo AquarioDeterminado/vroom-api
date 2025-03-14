@@ -10,7 +10,15 @@
     {
         "id": "4abfefc95226429e",
         "type": "tab",
-        "label": "Ui Control",
+        "label": "Move car (vroom vroom edition)",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e6c4a67240bb059c",
+        "type": "tab",
+        "label": "Test",
         "disabled": false,
         "info": "",
         "env": []
@@ -66,47 +74,9 @@
         "showDisconnectNotification": true
     },
     {
-        "id": "ce4fde5272828988",
-        "type": "ui-theme",
-        "name": "Default Theme",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094CE",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
         "id": "6010da9ddfe87f49",
         "type": "ui-theme",
         "name": "Theme 2",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#197df6",
-            "bgPage": "#ffffff",
-            "groupBg": "#eaebf2",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
-        "id": "4505e43f73f5bb65",
-        "type": "ui-theme",
-        "name": "Theme 3",
         "colors": {
             "surface": "#ffffff",
             "primary": "#197df6",
@@ -259,7 +229,7 @@
         "minPoolSize": "0",
         "maxPoolSize": "100",
         "maxIdleTimeMS": "0",
-        "uri": "mongodb://172.28.0.30",
+        "uri": "mongodb://admin:password@localhost:27017/?authSource=admin",
         "advanced": "{}",
         "uriTabActive": "tab-uri-advanced"
     },
@@ -269,15 +239,15 @@
         "z": "0bd2db54d49cbc75",
         "name": "",
         "topic": "vehicle/batteryPercentage",
-        "qos": "1",
+        "qos": "2",
         "datatype": "auto-detect",
         "broker": "dffaf68dd69c6f57",
         "nl": false,
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 210,
-        "y": 260,
+        "x": 190,
+        "y": 80,
         "wires": [
             [
                 "362cc42f1c2445d0"
@@ -296,11 +266,12 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 410,
-        "y": 260,
+        "x": 390,
+        "y": 80,
         "wires": [
             [
-                "c0764b9d6a8e8171"
+                "b6a342068968cdf4",
+                "6e4cb09bfb1deb27"
             ]
         ]
     },
@@ -317,11 +288,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 400,
+        "x": 150,
+        "y": 200,
         "wires": [
             [
-                "de685a440d2a33a3"
+                "de685a440d2a33a3",
+                "c4b43e5720bdedeb"
             ]
         ]
     },
@@ -337,11 +309,11 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 410,
-        "y": 400,
+        "x": 390,
+        "y": 200,
         "wires": [
             [
-                "b961cfc39090679a"
+                "c0cdabbbb177a56c"
             ]
         ]
     },
@@ -351,15 +323,15 @@
         "z": "0bd2db54d49cbc75",
         "name": "",
         "topic": "vehicle/inclination",
-        "qos": "1",
+        "qos": "2",
         "datatype": "auto-detect",
         "broker": "dffaf68dd69c6f57",
         "nl": false,
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 180,
-        "y": 540,
+        "x": 160,
+        "y": 300,
         "wires": [
             [
                 "444d753e9ae0697d"
@@ -378,11 +350,11 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 410,
-        "y": 540,
+        "x": 390,
+        "y": 300,
         "wires": [
             [
-                "10bf512b2845bb49"
+                "fddaaa8e2d5bec8d"
             ]
         ]
     },
@@ -392,803 +364,14 @@
         "z": "0bd2db54d49cbc75",
         "name": "",
         "info": "Change to send to the BD \n",
-        "x": 660,
-        "y": 400,
+        "x": 820,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "c0764b9d6a8e8171",
-        "type": "link out",
-        "z": "0bd2db54d49cbc75",
-        "name": "battery-ui-out",
-        "mode": "link",
-        "links": [
-            "5864e1dd3acf404f"
-        ],
-        "x": 555,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "b961cfc39090679a",
-        "type": "link out",
-        "z": "0bd2db54d49cbc75",
-        "name": "speed-ui-out",
-        "mode": "link",
-        "links": [
-            "8de93432084d82a9"
-        ],
-        "x": 555,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "10bf512b2845bb49",
-        "type": "link out",
-        "z": "0bd2db54d49cbc75",
-        "name": "inclination-ui-out",
-        "mode": "link",
-        "links": [
-            "f032412d5b6d49d5"
-        ],
-        "x": 555,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "ac5110c09d4f7a62",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/moves",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "96650e7ae853d9b4",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "up-vehicle-in",
-        "links": [
-            "845405278432f9ec"
-        ],
-        "x": 115,
-        "y": 680,
-        "wires": [
-            [
-                "12b4b9e7e5d7a25b"
-            ]
-        ]
-    },
-    {
-        "id": "aad95e775b50277d",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "down-vehicle-in",
-        "links": [
-            "5a853324c43e774c"
-        ],
-        "x": 115,
-        "y": 740,
-        "wires": [
-            [
-                "758a6412f1e2207a"
-            ]
-        ]
-    },
-    {
-        "id": "591c36f5cc43641f",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "left-vehicle-in",
-        "links": [
-            "8ce55e31bd8bf49e"
-        ],
-        "x": 115,
-        "y": 800,
-        "wires": [
-            [
-                "1a62920338b530ba"
-            ]
-        ]
-    },
-    {
-        "id": "c2d1dcfcc494ac62",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "right-vehicle-in",
-        "links": [
-            "cdcad2896a041dc0"
-        ],
-        "x": 115,
-        "y": 860,
-        "wires": [
-            [
-                "1db7b03b88ce450c"
-            ]
-        ]
-    },
-    {
-        "id": "9b119a9ccf501c2c",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/moves",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "9d4cf2b8bd787203",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/moves",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "977223f9a00ab567",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/moves",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 860,
-        "wires": []
-    },
-    {
-        "id": "12b4b9e7e5d7a25b",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"up\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "up",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 680,
-        "wires": [
-            [
-                "ac5110c09d4f7a62"
-            ]
-        ]
-    },
-    {
-        "id": "758a6412f1e2207a",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"down\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "down",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 320,
-        "y": 740,
-        "wires": [
-            [
-                "9b119a9ccf501c2c"
-            ]
-        ]
-    },
-    {
-        "id": "1a62920338b530ba",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"left\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "left",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 800,
-        "wires": [
-            [
-                "9d4cf2b8bd787203"
-            ]
-        ]
-    },
-    {
-        "id": "1db7b03b88ce450c",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"rgt\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "rgt",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 860,
-        "wires": [
-            [
-                "977223f9a00ab567"
-            ]
-        ]
-    },
-    {
-        "id": "28692d570ddcd315",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "360-vehicle-in",
-        "links": [
-            "def129317ec2f23e"
-        ],
-        "x": 115,
-        "y": 1280,
-        "wires": [
-            [
-                "e974e215e42c4a23"
-            ]
-        ]
-    },
-    {
-        "id": "e974e215e42c4a23",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"360\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "360",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 320,
-        "y": 1280,
-        "wires": [
-            [
-                "a3c66ecf6bba2bf9"
-            ]
-        ]
-    },
-    {
-        "id": "a3c66ecf6bba2bf9",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/actions",
-        "qos": "2",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 1280,
-        "wires": []
-    },
-    {
-        "id": "15d1b4c4350ce49f",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "square-vehicle-in",
-        "links": [
-            "6a2dcfedb5c9f4d2"
-        ],
-        "x": 115,
-        "y": 1340,
-        "wires": [
-            [
-                "6bbc639f2cecfe5c"
-            ]
-        ]
-    },
-    {
-        "id": "6bbc639f2cecfe5c",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"sqr\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "sqr",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 1340,
-        "wires": [
-            [
-                "142899e6e6948d2a"
-            ]
-        ]
-    },
-    {
-        "id": "142899e6e6948d2a",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/actions",
-        "qos": "2",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 1340,
-        "wires": []
-    },
-    {
-        "id": "8183a1251a010beb",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/moves",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "d7b15da505ce710f",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "dlf-vehicle-in",
-        "links": [
-            "9e9f74b4e7f5609f"
-        ],
-        "x": 115,
-        "y": 940,
-        "wires": [
-            [
-                "f72cfccb7d31ba89"
-            ]
-        ]
-    },
-    {
-        "id": "f72cfccb7d31ba89",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"dlf\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "dlf",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 940,
-        "wires": [
-            [
-                "8183a1251a010beb"
-            ]
-        ]
-    },
-    {
-        "id": "852c52e25748d558",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/moves",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 1000,
-        "wires": []
-    },
-    {
-        "id": "813a2ce2032e0a68",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "drf-vehicle-in",
-        "links": [
-            "16be5a8ad8d8a6df"
-        ],
-        "x": 115,
-        "y": 1000,
-        "wires": [
-            [
-                "6216efb8879bec33"
-            ]
-        ]
-    },
-    {
-        "id": "6216efb8879bec33",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"drf\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "drf",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 1000,
-        "wires": [
-            [
-                "852c52e25748d558"
-            ]
-        ]
-    },
-    {
-        "id": "e1963a511fd29127",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/moves",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 1060,
-        "wires": []
-    },
-    {
-        "id": "04ff249eb3fc3e91",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "dlb-vehicle-in",
-        "links": [
-            "41d614ac605c450f"
-        ],
-        "x": 115,
-        "y": 1060,
-        "wires": [
-            [
-                "38fe84b4bf80c723"
-            ]
-        ]
-    },
-    {
-        "id": "38fe84b4bf80c723",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"dlb\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "dlb",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 1060,
-        "wires": [
-            [
-                "e1963a511fd29127"
-            ]
-        ]
-    },
-    {
-        "id": "71524203e91cc815",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/moves",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 1120,
-        "wires": []
-    },
-    {
-        "id": "71b1b56f3404ed65",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "drb-vehicle-in",
-        "links": [
-            "dd8f82576d532b9d"
-        ],
-        "x": 115,
-        "y": 1120,
-        "wires": [
-            [
-                "5f85ce93e5f70bf1"
-            ]
-        ]
-    },
-    {
-        "id": "5f85ce93e5f70bf1",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"drb\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "drb",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 1120,
-        "wires": [
-            [
-                "71524203e91cc815"
-            ]
-        ]
-    },
-    {
-        "id": "5403bb36aaf3f229",
-        "type": "link in",
-        "z": "0bd2db54d49cbc75",
-        "name": "square-vehicle-in",
-        "links": [
-            "9e6c5e84ca5e938e"
-        ],
-        "x": 115,
-        "y": 1400,
-        "wires": [
-            [
-                "b22a96deb97516f8"
-            ]
-        ]
-    },
-    {
-        "id": "b22a96deb97516f8",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "set payload to \"sd\"",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "sd",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 1400,
-        "wires": [
-            [
-                "3abe516cbedd880a"
-            ]
-        ]
-    },
-    {
-        "id": "3abe516cbedd880a",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "ui/actions",
-        "qos": "2",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 580,
-        "y": 1400,
-        "wires": []
-    },
-    {
-        "id": "da2e405cc625d4fb",
-        "type": "ui-chart",
-        "z": "4abfefc95226429e",
-        "group": "84dc993d0c56fde2",
-        "name": "Speeds History",
-        "label": "Speeds History",
-        "order": 1,
-        "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
-        "xAxisLabel": "",
-        "xAxisProperty": "",
-        "xAxisPropertyType": "timestamp",
-        "xAxisType": "time",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "payload",
-        "yAxisPropertyType": "msg",
-        "ymin": "0",
-        "ymax": "",
-        "bins": 10,
-        "action": "append",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": 4,
-        "showLegend": true,
-        "removeOlder": "15",
-        "removeOlderUnit": "1",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": "9",
-        "height": "8",
-        "className": "",
-        "interpolation": "linear",
-        "x": 240,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5864e1dd3acf404f",
-        "type": "link in",
-        "z": "4abfefc95226429e",
-        "name": "battery-ui-in",
-        "links": [
-            "c0764b9d6a8e8171"
-        ],
-        "x": 565,
-        "y": 180,
-        "wires": [
-            [
-                "a4dfe9d48ed78c37",
-                "3ae9f4afe525e8a7"
-            ]
-        ]
-    },
-    {
-        "id": "a4dfe9d48ed78c37",
+        "id": "b6a342068968cdf4",
         "type": "ui-gauge",
-        "z": "4abfefc95226429e",
+        "z": "0bd2db54d49cbc75",
         "name": "Battery Gauge",
         "group": "968e40306a0e5d09",
         "order": 2,
@@ -1223,46 +406,14 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 760,
-        "y": 180,
+        "x": 600,
+        "y": 80,
         "wires": []
     },
     {
-        "id": "8de93432084d82a9",
-        "type": "link in",
-        "z": "4abfefc95226429e",
-        "name": "speed-ui-in",
-        "links": [
-            "b961cfc39090679a"
-        ],
-        "x": 105,
-        "y": 120,
-        "wires": [
-            [
-                "da2e405cc625d4fb"
-            ]
-        ]
-    },
-    {
-        "id": "f032412d5b6d49d5",
-        "type": "link in",
-        "z": "4abfefc95226429e",
-        "name": "battery-ui-in",
-        "links": [
-            "10bf512b2845bb49"
-        ],
-        "x": 565,
-        "y": 120,
-        "wires": [
-            [
-                "89169a9e7c94b49e"
-            ]
-        ]
-    },
-    {
-        "id": "89169a9e7c94b49e",
+        "id": "fddaaa8e2d5bec8d",
         "type": "ui-gauge",
-        "z": "4abfefc95226429e",
+        "z": "0bd2db54d49cbc75",
         "name": "Inclination",
         "group": "968e40306a0e5d09",
         "order": 1,
@@ -1305,8 +456,244 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 740,
+        "x": 580,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6e4cb09bfb1deb27",
+        "type": "debug",
+        "z": "0bd2db54d49cbc75",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c0cdabbbb177a56c",
+        "type": "ui-chart",
+        "z": "0bd2db54d49cbc75",
+        "group": "84dc993d0c56fde2",
+        "name": "Speeds History",
+        "label": "Speeds History",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "1",
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "9",
+        "height": "8",
+        "className": "",
+        "interpolation": "linear",
+        "x": 600,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "662badd4adbd76e6",
+        "type": "debug",
+        "z": "0bd2db54d49cbc75",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6a36911eb709c48e",
+        "type": "inject",
+        "z": "0bd2db54d49cbc75",
+        "name": "Inject payload",
+        "repeat": "0",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[{\"ID\":\"1\",\"Date\":\"03/03/2025\",\"Duration\":\"90\"},{\"ID\":\"2\",\"Date\":\"04/15/2025\",\"Duration\":\"120\"},{\"ID\":\"3\",\"Date\":\"05/22/2025\",\"Duration\":\"75\"},{\"ID\":\"4\",\"Date\":\"06/10/2025\",\"Duration\":\"60\"},{\"ID\":\"5\",\"Date\":\"07/30/2025\",\"Duration\":\"150\"},{\"ID\":\"6\",\"Date\":\"08/18/2025\",\"Duration\":\"180\"},{\"ID\":\"7\",\"Date\":\"09/05/2025\",\"Duration\":\"110\"}]",
+        "payloadType": "json",
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "662badd4adbd76e6",
+                "e98662825e247cfd"
+            ]
+        ]
+    },
+    {
+        "id": "e98662825e247cfd",
+        "type": "ui-table",
+        "z": "0bd2db54d49cbc75",
+        "group": "bc5e2b12dc57b4d2",
+        "name": "Trips History",
+        "label": "Trips History",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "maxrows": "",
+        "autocols": true,
+        "showSearch": false,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "ID",
+                "key": "",
+                "keyType": "key",
+                "width": "10%"
+            },
+            {
+                "title": "Date",
+                "key": "",
+                "keyType": "key",
+                "width": "30%"
+            },
+            {
+                "title": "Duration",
+                "key": "",
+                "keyType": "key",
+                "width": "30%"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "x": 370,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4b43e5720bdedeb",
+        "type": "debug",
+        "z": "0bd2db54d49cbc75",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "df3571304002762d",
+        "type": "inject",
+        "z": "0bd2db54d49cbc75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "120",
+        "payloadType": "num",
+        "x": 170,
+        "y": 540,
+        "wires": [
+            [
+                "1277980d4e4b9577",
+                "67278bb7672af4ec"
+            ]
+        ]
+    },
+    {
+        "id": "1277980d4e4b9577",
+        "type": "mqtt out",
+        "z": "0bd2db54d49cbc75",
+        "name": "",
+        "topic": "vehicle/speed",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "dffaf68dd69c6f57",
+        "x": 400,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "67278bb7672af4ec",
+        "type": "debug",
+        "z": "0bd2db54d49cbc75",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 660,
         "wires": []
     },
     {
@@ -1341,25 +728,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 140,
-        "y": 440,
+        "y": 80,
         "wires": [
             [
-                "845405278432f9ec"
+                "d9fca869c5b4928e"
             ]
         ]
-    },
-    {
-        "id": "845405278432f9ec",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "up-ui-out",
-        "mode": "link",
-        "links": [
-            "96650e7ae853d9b4"
-        ],
-        "x": 285,
-        "y": 440,
-        "wires": []
     },
     {
         "id": "8c870d3da05a26bc",
@@ -1393,25 +767,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 150,
-        "y": 500,
+        "y": 140,
         "wires": [
             [
-                "5a853324c43e774c"
+                "d1870c705f14a765"
             ]
         ]
-    },
-    {
-        "id": "5a853324c43e774c",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "down-ui-out",
-        "mode": "link",
-        "links": [
-            "aad95e775b50277d"
-        ],
-        "x": 285,
-        "y": 500,
-        "wires": []
     },
     {
         "id": "2b515a9d7d031564",
@@ -1445,25 +806,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 140,
-        "y": 560,
+        "y": 200,
         "wires": [
             [
-                "8ce55e31bd8bf49e"
+                "697d3cd9a24ae1c6"
             ]
         ]
-    },
-    {
-        "id": "8ce55e31bd8bf49e",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "left-ui-out",
-        "mode": "link",
-        "links": [
-            "591c36f5cc43641f"
-        ],
-        "x": 285,
-        "y": 560,
-        "wires": []
     },
     {
         "id": "37ef321bbb561d2c",
@@ -1497,121 +845,11 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 150,
-        "y": 620,
+        "y": 260,
         "wires": [
             [
-                "cdcad2896a041dc0"
+                "0870cd0d5c729e41"
             ]
-        ]
-    },
-    {
-        "id": "cdcad2896a041dc0",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "right-ui-out",
-        "mode": "link",
-        "links": [
-            "c2d1dcfcc494ac62"
-        ],
-        "x": 285,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "3ae9f4afe525e8a7",
-        "type": "debug",
-        "z": "4abfefc95226429e",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "0851420853c812af",
-        "type": "debug",
-        "z": "4abfefc95226429e",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "inject1",
-        "type": "inject",
-        "z": "4abfefc95226429e",
-        "name": "Inject payload",
-        "repeat": "0",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[{\"ID\":\"1\",\"Date\":\"03/03/2025\",\"Duration\":\"90\"},{\"ID\":\"2\",\"Date\":\"04/15/2025\",\"Duration\":\"120\"},{\"ID\":\"3\",\"Date\":\"05/22/2025\",\"Duration\":\"75\"},{\"ID\":\"4\",\"Date\":\"06/10/2025\",\"Duration\":\"60\"},{\"ID\":\"5\",\"Date\":\"07/30/2025\",\"Duration\":\"150\"},{\"ID\":\"6\",\"Date\":\"08/18/2025\",\"Duration\":\"180\"},{\"ID\":\"7\",\"Date\":\"09/05/2025\",\"Duration\":\"110\"}]",
-        "payloadType": "json",
-        "x": 630,
-        "y": 440,
-        "wires": [
-            [
-                "0851420853c812af",
-                "ui_table1"
-            ]
-        ]
-    },
-    {
-        "id": "ui_table1",
-        "type": "ui-table",
-        "z": "4abfefc95226429e",
-        "group": "bc5e2b12dc57b4d2",
-        "name": "Trips History",
-        "label": "Trips History",
-        "order": 1,
-        "width": "3",
-        "height": "1",
-        "maxrows": "",
-        "autocols": true,
-        "showSearch": false,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "ID",
-                "key": "",
-                "keyType": "key",
-                "width": "10%"
-            },
-            {
-                "title": "Date",
-                "key": "",
-                "keyType": "key",
-                "width": "30%"
-            },
-            {
-                "title": "Duration",
-                "key": "",
-                "keyType": "key",
-                "width": "30%"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "append",
-        "x": 850,
-        "y": 440,
-        "wires": [
-            []
         ]
     },
     {
@@ -1646,25 +884,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 130,
-        "y": 1040,
+        "y": 680,
         "wires": [
             [
-                "def129317ec2f23e"
+                "67dc7f68204bab7c"
             ]
         ]
-    },
-    {
-        "id": "def129317ec2f23e",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "360-ui-out",
-        "mode": "link",
-        "links": [
-            "28692d570ddcd315"
-        ],
-        "x": 305,
-        "y": 1040,
-        "wires": []
     },
     {
         "id": "31d82278e5b28c88",
@@ -1698,25 +923,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 140,
-        "y": 1100,
+        "y": 740,
         "wires": [
             [
-                "6a2dcfedb5c9f4d2"
+                "61e6717a976582f0"
             ]
         ]
-    },
-    {
-        "id": "6a2dcfedb5c9f4d2",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "square-ui-out",
-        "mode": "link",
-        "links": [
-            "15d1b4c4350ce49f"
-        ],
-        "x": 305,
-        "y": 1100,
-        "wires": []
     },
     {
         "id": "b6b9e880835d1e4d",
@@ -1750,25 +962,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 180,
-        "y": 760,
+        "y": 380,
         "wires": [
             [
-                "16be5a8ad8d8a6df"
+                "5e5a44d740f532ec"
             ]
         ]
-    },
-    {
-        "id": "16be5a8ad8d8a6df",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "drf-ui-out",
-        "mode": "link",
-        "links": [
-            "813a2ce2032e0a68"
-        ],
-        "x": 345,
-        "y": 760,
-        "wires": []
     },
     {
         "id": "44d9072e1fd6fc42",
@@ -1802,25 +1001,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 170,
-        "y": 700,
+        "y": 320,
         "wires": [
             [
-                "9e9f74b4e7f5609f"
+                "188f55b22adf5069"
             ]
         ]
-    },
-    {
-        "id": "9e9f74b4e7f5609f",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "dlf-ui-out",
-        "mode": "link",
-        "links": [
-            "d7b15da505ce710f"
-        ],
-        "x": 345,
-        "y": 700,
-        "wires": []
     },
     {
         "id": "bcfe0b92f7869914",
@@ -1854,25 +1040,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 170,
-        "y": 820,
+        "y": 440,
         "wires": [
             [
-                "41d614ac605c450f"
+                "978b18fcad318b30"
             ]
         ]
-    },
-    {
-        "id": "41d614ac605c450f",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "dlb-ui-out",
-        "mode": "link",
-        "links": [
-            "04ff249eb3fc3e91"
-        ],
-        "x": 345,
-        "y": 820,
-        "wires": []
     },
     {
         "id": "df06378b58b58b02",
@@ -1906,25 +1079,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 170,
-        "y": 880,
+        "y": 500,
         "wires": [
             [
-                "dd8f82576d532b9d"
+                "c27220f421aab8ff"
             ]
         ]
-    },
-    {
-        "id": "dd8f82576d532b9d",
-        "type": "link out",
-        "z": "4abfefc95226429e",
-        "name": "drb-ui-out",
-        "mode": "link",
-        "links": [
-            "71b1b56f3404ed65"
-        ],
-        "x": 345,
-        "y": 880,
-        "wires": []
     },
     {
         "id": "565b66d522b831bc",
@@ -1958,30 +1118,350 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 150,
-        "y": 1160,
+        "y": 800,
         "wires": [
             [
-                "9e6c5e84ca5e938e"
+                "af61c11e1caa9ff1"
             ]
         ]
     },
     {
-        "id": "9e6c5e84ca5e938e",
-        "type": "link out",
+        "id": "416bbf912dcf2511",
+        "type": "mqtt out",
         "z": "4abfefc95226429e",
-        "name": "self-driving-ui-out",
-        "mode": "link",
-        "links": [
-            "5403bb36aaf3f229"
-        ],
-        "x": 305,
-        "y": 1160,
+        "name": "",
+        "topic": "vehicle/moves",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "dffaf68dd69c6f57",
+        "x": 760,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "311414d6b3dc5961",
-        "type": "friendly-id",
+        "id": "d9fca869c5b4928e",
+        "type": "change",
         "z": "4abfefc95226429e",
+        "name": "set payload to \"up\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "up",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 80,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
+    },
+    {
+        "id": "d1870c705f14a765",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"down\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "down",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 140,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
+    },
+    {
+        "id": "697d3cd9a24ae1c6",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"left\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "left",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 200,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
+    },
+    {
+        "id": "0870cd0d5c729e41",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"rgt\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "rgt",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
+    },
+    {
+        "id": "188f55b22adf5069",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"dlf\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "dlf",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 320,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
+    },
+    {
+        "id": "5e5a44d740f532ec",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"drf\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "drf",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 380,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
+    },
+    {
+        "id": "978b18fcad318b30",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"dlb\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "dlb",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 440,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
+    },
+    {
+        "id": "c27220f421aab8ff",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"drb\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "drb",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 500,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
+    },
+    {
+        "id": "67dc7f68204bab7c",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"360\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "360",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 680,
+        "wires": [
+            [
+                "4f2cd41146afb778"
+            ]
+        ]
+    },
+    {
+        "id": "61e6717a976582f0",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"sqr\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "sqr",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 740,
+        "wires": [
+            [
+                "4f2cd41146afb778"
+            ]
+        ]
+    },
+    {
+        "id": "af61c11e1caa9ff1",
+        "type": "change",
+        "z": "4abfefc95226429e",
+        "name": "set payload to \"sd\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "sd",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 800,
+        "wires": [
+            [
+                "4f2cd41146afb778"
+            ]
+        ]
+    },
+    {
+        "id": "4f2cd41146afb778",
+        "type": "mqtt out",
+        "z": "4abfefc95226429e",
+        "name": "",
+        "topic": "vehicle/actions",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "dffaf68dd69c6f57",
+        "x": 760,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "c98d099acb02654a",
+        "type": "friendly-id",
+        "z": "e6c4a67240bb059c",
         "name": "",
         "mode": "GENERATE-NANOID",
         "charlen": 21,
@@ -1994,18 +1474,18 @@
         "inputFromType": "auto",
         "outputToVal": "",
         "outputToType": "auto",
-        "x": 240,
-        "y": 1260,
+        "x": 280,
+        "y": 60,
         "wires": [
             [
-                "f94f784bd24717f6"
+                "ca8332cf23321859"
             ]
         ]
     },
     {
-        "id": "f94f784bd24717f6",
+        "id": "ca8332cf23321859",
         "type": "change",
-        "z": "4abfefc95226429e",
+        "z": "e6c4a67240bb059c",
         "name": "",
         "rules": [
             {
@@ -2021,18 +1501,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
-        "y": 1320,
+        "x": 460,
+        "y": 120,
         "wires": [
             [
-                "e6b4a2c8164551dd"
+                "87e0e0dbb90d2053"
             ]
         ]
     },
     {
-        "id": "10dfc8918c061234",
+        "id": "06894d882c214034",
         "type": "inject",
-        "z": "4abfefc95226429e",
+        "z": "e6c4a67240bb059c",
         "name": "",
         "props": [
             {
@@ -2050,19 +1530,19 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 1320,
+        "x": 140,
+        "y": 120,
         "wires": [
             [
-                "7d32ebf1f67c0f29"
+                "8d883dcfbda429c0"
             ]
         ]
     },
     {
-        "id": "e6b4a2c8164551dd",
+        "id": "87e0e0dbb90d2053",
         "type": "debug",
-        "z": "4abfefc95226429e",
-        "name": "debug 3",
+        "z": "e6c4a67240bb059c",
+        "name": "debug 1",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -2070,14 +1550,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 1360,
+        "x": 680,
+        "y": 160,
         "wires": []
     },
     {
-        "id": "7d32ebf1f67c0f29",
+        "id": "8d883dcfbda429c0",
         "type": "mongodb4",
-        "z": "4abfefc95226429e",
+        "z": "e6c4a67240bb059c",
         "clientNode": "c4bd5f065e06f4ad",
         "mode": "collection",
         "collection": "",
@@ -2086,11 +1566,97 @@
         "maxTimeMS": "0",
         "handleDocId": false,
         "name": "",
-        "x": 370,
-        "y": 1440,
+        "x": 420,
+        "y": 240,
         "wires": [
             [
-                "e6b4a2c8164551dd"
+                "87e0e0dbb90d2053"
+            ]
+        ]
+    },
+    {
+        "id": "2560b357405e674a",
+        "type": "mongodb4",
+        "z": "e6c4a67240bb059c",
+        "clientNode": "c4bd5f065e06f4ad",
+        "mode": "collection",
+        "collection": "velocities",
+        "operation": "find",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "",
+        "x": 480,
+        "y": 360,
+        "wires": [
+            [
+                "9d8d0c92a8c3d8d8"
+            ]
+        ]
+    },
+    {
+        "id": "07e03ef3899e71b8",
+        "type": "inject",
+        "z": "e6c4a67240bb059c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 360,
+        "wires": [
+            [
+                "35e43ad081cb7d8d",
+                "2560b357405e674a"
+            ]
+        ]
+    },
+    {
+        "id": "9d8d0c92a8c3d8d8",
+        "type": "debug",
+        "z": "e6c4a67240bb059c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "35e43ad081cb7d8d",
+        "type": "function",
+        "z": "e6c4a67240bb059c",
+        "name": "function 2",
+        "func": "var msgdata = {};\nmsgdata.collection = \"trips\";\nreturn msgdata;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 400,
+        "wires": [
+            [
+                "2560b357405e674a"
             ]
         ]
     }

@@ -23,15 +23,15 @@ while True:
 
     if choice == "1":
         battery_percentage = input("Enter battery percentage: ")
-        client.publish("vehicle/batteryPercentage", battery_percentage, 1)
+        client.publish("vehicle/batteryPercentage", battery_percentage, 2)
     elif choice == "2":
         speed = input("Enter speed: ")
-        client.publish("vehicle/speed", speed, 1)
+        client.publish("vehicle/speed", speed, 2)
     elif choice == "3":
         inclination = input("Enter inclination: ")
-        client.publish("vehicle/inclination", inclination, 1)
+        client.publish("vehicle/inclination", inclination, 2)
     elif choice == "4":
-        client.publish("test_topic", "Disconnecting from the MQTT broker", 1)
+        client.publish("test_topic", "Disconnecting from the MQTT broker", 2)
         print("Disconnecting from the MQTT broker")
         client.disconnect()
         client.loop_stop()  # Stop the loop after disconnect
