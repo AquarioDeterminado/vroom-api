@@ -289,11 +289,10 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 200,
+        "y": 440,
         "wires": [
             [
-                "de685a440d2a33a3",
-                "c4b43e5720bdedeb"
+                "de685a440d2a33a3"
             ]
         ]
     },
@@ -309,11 +308,11 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 390,
-        "y": 200,
+        "x": 310,
+        "y": 440,
         "wires": [
             [
-                "c0cdabbbb177a56c"
+                "0159a590f46c26f4"
             ]
         ]
     },
@@ -331,7 +330,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 300,
+        "y": 200,
         "wires": [
             [
                 "444d753e9ae0697d"
@@ -351,22 +350,12 @@
         "property": "payload",
         "topi": "topic",
         "x": 400,
-        "y": 300,
+        "y": 200,
         "wires": [
             [
                 "fddaaa8e2d5bec8d"
             ]
         ]
-    },
-    {
-        "id": "14dc4700b172c15a",
-        "type": "comment",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "info": "Change to send to the BD \n",
-        "x": 820,
-        "y": 200,
-        "wires": []
     },
     {
         "id": "b6a342068968cdf4",
@@ -457,7 +446,7 @@
         "styleGlow": false,
         "className": "",
         "x": 590,
-        "y": 300,
+        "y": 200,
         "wires": []
     },
     {
@@ -478,225 +467,6 @@
         "wires": []
     },
     {
-        "id": "c0cdabbbb177a56c",
-        "type": "ui-chart",
-        "z": "0bd2db54d49cbc75",
-        "group": "84dc993d0c56fde2",
-        "name": "Speeds History",
-        "label": "Speeds History",
-        "order": 1,
-        "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
-        "xAxisLabel": "",
-        "xAxisProperty": "",
-        "xAxisPropertyType": "timestamp",
-        "xAxisType": "time",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "payload",
-        "yAxisPropertyType": "msg",
-        "ymin": "0",
-        "ymax": "",
-        "bins": 10,
-        "action": "append",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": 4,
-        "showLegend": true,
-        "removeOlder": "1",
-        "removeOlderUnit": "3600",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": "9",
-        "height": "8",
-        "className": "",
-        "interpolation": "linear",
-        "x": 600,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "662badd4adbd76e6",
-        "type": "debug",
-        "z": "0bd2db54d49cbc75",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 360,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "6a36911eb709c48e",
-        "type": "inject",
-        "z": "0bd2db54d49cbc75",
-        "name": "Inject payload",
-        "repeat": "0",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[{\"ID\":\"1\",\"Date\":\"03/03/2025\",\"Duration\":\"90\"},{\"ID\":\"2\",\"Date\":\"04/15/2025\",\"Duration\":\"120\"},{\"ID\":\"3\",\"Date\":\"05/22/2025\",\"Duration\":\"75\"},{\"ID\":\"4\",\"Date\":\"06/10/2025\",\"Duration\":\"60\"},{\"ID\":\"5\",\"Date\":\"07/30/2025\",\"Duration\":\"150\"},{\"ID\":\"6\",\"Date\":\"08/18/2025\",\"Duration\":\"180\"},{\"ID\":\"7\",\"Date\":\"09/05/2025\",\"Duration\":\"110\"}]",
-        "payloadType": "json",
-        "x": 150,
-        "y": 640,
-        "wires": [
-            [
-                "662badd4adbd76e6",
-                "e98662825e247cfd"
-            ]
-        ]
-    },
-    {
-        "id": "e98662825e247cfd",
-        "type": "ui-table",
-        "z": "0bd2db54d49cbc75",
-        "group": "bc5e2b12dc57b4d2",
-        "name": "Trips History",
-        "label": "Trips History",
-        "order": 1,
-        "width": "3",
-        "height": "1",
-        "maxrows": "",
-        "autocols": true,
-        "showSearch": false,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "ID",
-                "key": "",
-                "keyType": "key",
-                "width": "10%"
-            },
-            {
-                "title": "Date",
-                "key": "",
-                "keyType": "key",
-                "width": "30%"
-            },
-            {
-                "title": "Duration",
-                "key": "",
-                "keyType": "key",
-                "width": "30%"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "append",
-        "x": 370,
-        "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c4b43e5720bdedeb",
-        "type": "debug",
-        "z": "0bd2db54d49cbc75",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 340,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "df3571304002762d",
-        "type": "inject",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "120",
-        "payloadType": "num",
-        "x": 170,
-        "y": 740,
-        "wires": [
-            [
-                "1277980d4e4b9577",
-                "67278bb7672af4ec"
-            ]
-        ]
-    },
-    {
-        "id": "1277980d4e4b9577",
-        "type": "mqtt out",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "topic": "vehicle/speed",
-        "qos": "2",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "dffaf68dd69c6f57",
-        "x": 400,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "67278bb7672af4ec",
-        "type": "debug",
-        "z": "0bd2db54d49cbc75",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 860,
-        "wires": []
-    },
-    {
         "id": "72a4a20ebe4d2286",
         "type": "mqtt in",
         "z": "0bd2db54d49cbc75",
@@ -705,12 +475,12 @@
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "dffaf68dd69c6f57",
-        "nl": false,
+        "nl": true,
         "rap": true,
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 400,
+        "y": 300,
         "wires": [
             [
                 "e8d8b8cadd302c4f"
@@ -739,16 +509,14 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 390,
-        "y": 400,
+        "x": 310,
+        "y": 300,
         "wires": [
             [
-                "912c3eeaede07e4e",
-                "9d7b9e3195df52a0"
+                "912c3eeaede07e4e"
             ],
             [
-                "391e97b8d433e511",
-                "9d7b9e3195df52a0"
+                "83dd708e4dca2964"
             ]
         ]
     },
@@ -764,12 +532,11 @@
         "maxTimeMS": "0",
         "handleDocId": false,
         "name": "",
-        "x": 760,
-        "y": 360,
+        "x": 680,
+        "y": 260,
         "wires": [
             [
-                "88c1a8d514702f6b",
-                "81d95bb26f9167fc"
+                "88c1a8d514702f6b"
             ]
         ]
     },
@@ -783,33 +550,15 @@
         "operation": "updateOne",
         "output": "toArray",
         "maxTimeMS": "0",
-        "handleDocId": false,
+        "handleDocId": true,
         "name": "",
-        "x": 1130,
-        "y": 440,
+        "x": 690,
+        "y": 340,
         "wires": [
             [
-                "058c279c4629bee6",
-                "c8de2821268efc04"
+                "058c279c4629bee6"
             ]
         ]
-    },
-    {
-        "id": "c8de2821268efc04",
-        "type": "debug",
-        "z": "0bd2db54d49cbc75",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 580,
-        "wires": []
     },
     {
         "id": "912c3eeaede07e4e",
@@ -842,58 +591,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 360,
+        "x": 500,
+        "y": 260,
         "wires": [
             [
                 "8b6d9b14be343bc2"
             ]
         ]
-    },
-    {
-        "id": "c6a33027244ed727",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.endDate",
-                "pt": "msg",
-                "to": "endDate",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 910,
-        "y": 440,
-        "wires": [
-            [
-                "49922b8cdcf37909",
-                "66a8363fbeb709ff"
-            ]
-        ]
-    },
-    {
-        "id": "81d95bb26f9167fc",
-        "type": "debug",
-        "z": "0bd2db54d49cbc75",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 920,
-        "y": 380,
-        "wires": []
     },
     {
         "id": "88c1a8d514702f6b",
@@ -909,68 +613,9 @@
         "correl": "",
         "expiry": "",
         "broker": "dffaf68dd69c6f57",
-        "x": 930,
-        "y": 320,
+        "x": 850,
+        "y": 260,
         "wires": []
-    },
-    {
-        "id": "e33a803a877b4ef9",
-        "type": "mongodb4",
-        "z": "0bd2db54d49cbc75",
-        "clientNode": "c4bd5f065e06f4ad",
-        "mode": "collection",
-        "collection": "trips",
-        "operation": "findOne",
-        "output": "toArray",
-        "maxTimeMS": "0",
-        "handleDocId": false,
-        "name": "",
-        "x": 720,
-        "y": 440,
-        "wires": [
-            [
-                "c6a33027244ed727"
-            ]
-        ]
-    },
-    {
-        "id": "391e97b8d433e511",
-        "type": "change",
-        "z": "0bd2db54d49cbc75",
-        "name": "",
-        "rules": [
-            {
-                "t": "delete",
-                "p": "payload.action",
-                "pt": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload.date",
-                "pt": "msg",
-                "to": "endDate",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "[msg.payload]",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 440,
-        "wires": [
-            [
-                "e33a803a877b4ef9"
-            ]
-        ]
     },
     {
         "id": "058c279c4629bee6",
@@ -986,43 +631,288 @@
         "correl": "",
         "expiry": "",
         "broker": "dffaf68dd69c6f57",
-        "x": 1290,
-        "y": 440,
+        "x": 850,
+        "y": 340,
         "wires": []
     },
     {
-        "id": "9d7b9e3195df52a0",
-        "type": "debug",
+        "id": "83dd708e4dca2964",
+        "type": "change",
         "z": "0bd2db54d49cbc75",
-        "name": "debug 9",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[ { \"_id\": msg.payload.id }, { \"$set\": { \"endDate\": msg.payload.date } } ]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
         "x": 500,
-        "y": 520,
+        "y": 340,
+        "wires": [
+            [
+                "49922b8cdcf37909"
+            ]
+        ]
+    },
+    {
+        "id": "45d84b90a8aa693c",
+        "type": "mongodb4",
+        "z": "0bd2db54d49cbc75",
+        "clientNode": "c4bd5f065e06f4ad",
+        "mode": "collection",
+        "collection": "speeds",
+        "operation": "insertOne",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "",
+        "x": 700,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0159a590f46c26f4",
+        "type": "change",
+        "z": "0bd2db54d49cbc75",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.date",
+                "pt": "msg",
+                "to": "$now()",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[msg.payload]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "45d84b90a8aa693c",
+                "6a779fb3439f524a"
+            ]
+        ]
+    },
+    {
+        "id": "1bb7fb2071d1c395",
+        "type": "mongodb4",
+        "z": "0bd2db54d49cbc75",
+        "clientNode": "c4bd5f065e06f4ad",
+        "mode": "collection",
+        "collection": "speeds",
+        "operation": "find",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "",
+        "x": 350,
+        "y": 560,
+        "wires": [
+            [
+                "6a779fb3439f524a"
+            ]
+        ]
+    },
+    {
+        "id": "7ef967e05a75ab52",
+        "type": "inject",
+        "z": "0bd2db54d49cbc75",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 640,
+        "wires": [
+            [
+                "1bb7fb2071d1c395",
+                "eeaba8cd9c78ebc7"
+            ]
+        ]
+    },
+    {
+        "id": "6a779fb3439f524a",
+        "type": "ui-chart",
+        "z": "0bd2db54d49cbc75",
+        "group": "84dc993d0c56fde2",
+        "name": "Speeds History",
+        "label": "Speeds History",
+        "order": 1,
+        "chartType": "line",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "date",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "Speed",
+        "yAxisProperty": "speed",
+        "yAxisPropertyType": "property",
+        "ymin": "0",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "1",
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "9",
+        "height": "8",
+        "className": "",
+        "interpolation": "bezier",
+        "x": 720,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "434760efb916dd59",
+        "type": "comment",
+        "z": "0bd2db54d49cbc75",
+        "name": "",
+        "info": "example:\n\n{\n    \"action\": \"start\",\n    \"date\": \"20/2/2024 12:20\"\n}\n\n\n{\n    \"action\": \"end\",\n    \"_id\": \"\",\n    \"date\": \"20/2/2024 12:20\"\n}\n",
+        "x": 80,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "66a8363fbeb709ff",
-        "type": "debug",
+        "id": "66001e3acefac83e",
+        "type": "comment",
         "z": "0bd2db54d49cbc75",
-        "name": "debug 10",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 560,
+        "name": "",
+        "info": "example:\n\n{\n    \"speed\": 19.99\n}\n",
+        "x": 80,
+        "y": 500,
         "wires": []
+    },
+    {
+        "id": "34c40e02a7848d54",
+        "type": "ui-table",
+        "z": "0bd2db54d49cbc75",
+        "group": "bc5e2b12dc57b4d2",
+        "name": "",
+        "label": "Trips",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "maxrows": "",
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "x": 690,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eeaba8cd9c78ebc7",
+        "type": "mongodb4",
+        "z": "0bd2db54d49cbc75",
+        "clientNode": "c4bd5f065e06f4ad",
+        "mode": "collection",
+        "collection": "trips",
+        "operation": "find",
+        "output": "forEach",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "",
+        "x": 350,
+        "y": 680,
+        "wires": [
+            [
+                "3353de1004d80473"
+            ]
+        ]
+    },
+    {
+        "id": "3353de1004d80473",
+        "type": "change",
+        "z": "0bd2db54d49cbc75",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload._id",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[msg.payload]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 680,
+        "wires": [
+            [
+                "34c40e02a7848d54"
+            ]
+        ]
     },
     {
         "id": "01e73c67e54de6c5",
@@ -1785,205 +1675,5 @@
         "x": 760,
         "y": 740,
         "wires": []
-    },
-    {
-        "id": "c98d099acb02654a",
-        "type": "friendly-id",
-        "z": "e6c4a67240bb059c",
-        "name": "",
-        "mode": "GENERATE-NANOID",
-        "charlen": 21,
-        "charset": "DEFAULT",
-        "customs": "",
-        "tostatus": false,
-        "statusVal": "",
-        "statusType": "auto",
-        "inputFromVal": "",
-        "inputFromType": "auto",
-        "outputToVal": "",
-        "outputToType": "auto",
-        "x": 280,
-        "y": 60,
-        "wires": [
-            [
-                "ca8332cf23321859"
-            ]
-        ]
-    },
-    {
-        "id": "ca8332cf23321859",
-        "type": "change",
-        "z": "e6c4a67240bb059c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "[msg.payload]",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 120,
-        "wires": [
-            [
-                "87e0e0dbb90d2053"
-            ]
-        ]
-    },
-    {
-        "id": "06894d882c214034",
-        "type": "inject",
-        "z": "e6c4a67240bb059c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "87e0e0dbb90d2053",
-        "type": "debug",
-        "z": "e6c4a67240bb059c",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "07e03ef3899e71b8",
-        "type": "inject",
-        "z": "e6c4a67240bb059c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 360,
-        "wires": [
-            [
-                "35e43ad081cb7d8d",
-                "2560b357405e674a"
-            ]
-        ]
-    },
-    {
-        "id": "9d8d0c92a8c3d8d8",
-        "type": "debug",
-        "z": "e6c4a67240bb059c",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 700,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "35e43ad081cb7d8d",
-        "type": "function",
-        "z": "e6c4a67240bb059c",
-        "name": "function 2",
-        "func": "var msgdata = {};\nmsgdata.collection = \"trips\";\nreturn msgdata;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 400,
-        "wires": [
-            [
-                "2560b357405e674a"
-            ]
-        ]
-    },
-    {
-        "id": "8d883dcfbda429c0",
-        "type": "mongodb4",
-        "z": "e6c4a67240bb059c",
-        "clientNode": "c4bd5f065e06f4ad",
-        "mode": "collection",
-        "collection": "",
-        "operation": "",
-        "output": "toArray",
-        "maxTimeMS": "0",
-        "handleDocId": false,
-        "name": "",
-        "x": 420,
-        "y": 240,
-        "wires": [
-            [
-                "87e0e0dbb90d2053"
-            ]
-        ]
-    },
-    {
-        "id": "2560b357405e674a",
-        "type": "mongodb4",
-        "z": "e6c4a67240bb059c",
-        "clientNode": "c4bd5f065e06f4ad",
-        "mode": "collection",
-        "collection": "velocities",
-        "operation": "find",
-        "output": "toArray",
-        "maxTimeMS": "0",
-        "handleDocId": false,
-        "name": "",
-        "x": 480,
-        "y": 360,
-        "wires": [
-            [
-                "9d8d0c92a8c3d8d8"
-            ]
-        ]
     }
 ]
