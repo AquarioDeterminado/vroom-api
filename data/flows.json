@@ -185,17 +185,6 @@
         "groupType": "default"
     },
     {
-        "id": "bac957b61e489ccf",
-        "type": "ui-spacer",
-        "group": "b953d24eec769a19",
-        "name": "spacer",
-        "tooltip": "",
-        "order": 5,
-        "width": "3",
-        "height": "2",
-        "className": ""
-    },
-    {
         "id": "6f0fe5457d632b4a",
         "type": "ui-group",
         "name": "action-buttons",
@@ -847,10 +836,10 @@
         "order": 1,
         "width": "3",
         "height": "1",
-        "maxrows": "",
+        "maxrows": "4",
         "passthru": false,
         "autocols": true,
-        "showSearch": true,
+        "showSearch": false,
         "selectionType": "none",
         "columns": [],
         "mobileBreakpoint": "sm",
@@ -1358,7 +1347,7 @@
         "expiry": "",
         "broker": "dffaf68dd69c6f57",
         "x": 760,
-        "y": 300,
+        "y": 280,
         "wires": []
     },
     {
@@ -1371,7 +1360,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "up",
+                "to": "up;",
                 "tot": "str"
             }
         ],
@@ -1398,7 +1387,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "down",
+                "to": "down;",
                 "tot": "str"
             }
         ],
@@ -1425,7 +1414,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "left",
+                "to": "left;",
                 "tot": "str"
             }
         ],
@@ -1452,7 +1441,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "rgt",
+                "to": "rgt;",
                 "tot": "str"
             }
         ],
@@ -1479,7 +1468,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "dlf",
+                "to": "dlf;",
                 "tot": "str"
             }
         ],
@@ -1506,7 +1495,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "drf",
+                "to": "drf;",
                 "tot": "str"
             }
         ],
@@ -1533,7 +1522,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "dlb",
+                "to": "dlb;",
                 "tot": "str"
             }
         ],
@@ -1560,7 +1549,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "drb",
+                "to": "drb;",
                 "tot": "str"
             }
         ],
@@ -1587,7 +1576,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "360",
+                "to": "360;",
                 "tot": "str"
             }
         ],
@@ -1614,7 +1603,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "sqr",
+                "to": "sqr;",
                 "tot": "str"
             }
         ],
@@ -1641,7 +1630,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "sd",
+                "to": "sd;",
                 "tot": "str"
             }
         ],
@@ -1675,5 +1664,116 @@
         "x": 760,
         "y": 740,
         "wires": []
+    },
+    {
+        "id": "4d59377f224f53d3",
+        "type": "ui-slider",
+        "z": "4abfefc95226429e",
+        "group": "6f0fe5457d632b4a",
+        "name": "Speed Slider",
+        "label": "speed",
+        "tooltip": "",
+        "order": 4,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 150,
+        "y": 880,
+        "wires": [
+            [
+                "bfca478a4c91975a"
+            ]
+        ]
+    },
+    {
+        "id": "bfca478a4c91975a",
+        "type": "template",
+        "z": "4abfefc95226429e",
+        "name": "Send Speed",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload}};",
+        "output": "str",
+        "x": 450,
+        "y": 880,
+        "wires": [
+            [
+                "bfdb494f1b8e06da"
+            ]
+        ]
+    },
+    {
+        "id": "bfdb494f1b8e06da",
+        "type": "mqtt out",
+        "z": "4abfefc95226429e",
+        "name": "",
+        "topic": "vehicle/speed",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "dffaf68dd69c6f57",
+        "x": 760,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "0a0590f3f8456950",
+        "type": "ui-button",
+        "z": "4abfefc95226429e",
+        "group": "b953d24eec769a19",
+        "name": "stop",
+        "label": "",
+        "order": 5,
+        "width": "3",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "stop",
+        "iconPosition": "left",
+        "payload": "stop;",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "416bbf912dcf2511"
+            ]
+        ]
     }
 ]
