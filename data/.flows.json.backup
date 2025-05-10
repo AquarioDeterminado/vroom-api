@@ -525,7 +525,8 @@
         "y": 260,
         "wires": [
             [
-                "88c1a8d514702f6b"
+                "88c1a8d514702f6b",
+                "3c6fab748b69c78c"
             ]
         ]
     },
@@ -545,7 +546,8 @@
         "y": 340,
         "wires": [
             [
-                "058c279c4629bee6"
+                "058c279c4629bee6",
+                "3c6fab748b69c78c"
             ]
         ]
     },
@@ -603,7 +605,7 @@
         "expiry": "",
         "broker": "dffaf68dd69c6f57",
         "x": 850,
-        "y": 260,
+        "y": 220,
         "wires": []
     },
     {
@@ -621,7 +623,7 @@
         "expiry": "",
         "broker": "dffaf68dd69c6f57",
         "x": 850,
-        "y": 340,
+        "y": 380,
         "wires": []
     },
     {
@@ -647,7 +649,8 @@
         "y": 340,
         "wires": [
             [
-                "49922b8cdcf37909"
+                "49922b8cdcf37909",
+                "89ed37858fd3ac41"
             ]
         ]
     },
@@ -811,7 +814,7 @@
         "type": "comment",
         "z": "0bd2db54d49cbc75",
         "name": "",
-        "info": "example:\n\n{\n    \"action\": \"start\",\n    \"date\": \"20/2/2024 12:20\"\n}\n\n\n{\n    \"action\": \"end\",\n    \"_id\": \"\",\n    \"date\": \"20/2/2024 12:20\"\n}\n",
+        "info": "example:\n\n{\n    \"action\": \"start\",\n    \"date\": \"20/2/2024 12:20\"\n}\n\n\n{\n    \"action\": \"end\",\n    \"id\": \"\",\n    \"date\": \"20/2/2024 12:20\"\n}\n",
         "x": 80,
         "y": 360,
         "wires": []
@@ -827,7 +830,27 @@
         "wires": []
     },
     {
-        "id": "34c40e02a7848d54",
+        "id": "eeaba8cd9c78ebc7",
+        "type": "mongodb4",
+        "z": "0bd2db54d49cbc75",
+        "clientNode": "c4bd5f065e06f4ad",
+        "mode": "collection",
+        "collection": "trips",
+        "operation": "find",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "",
+        "x": 350,
+        "y": 680,
+        "wires": [
+            [
+                "7491135a8b2ad5e7"
+            ]
+        ]
+    },
+    {
+        "id": "7491135a8b2ad5e7",
         "type": "ui-table",
         "z": "0bd2db54d49cbc75",
         "group": "bc5e2b12dc57b4d2",
@@ -838,10 +861,27 @@
         "height": "1",
         "maxrows": "4",
         "passthru": false,
-        "autocols": true,
+        "autocols": false,
         "showSearch": false,
         "selectionType": "none",
-        "columns": [],
+        "columns": [
+            {
+                "title": "Start Date",
+                "key": "startDate",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "center"
+            },
+            {
+                "title": "End Date",
+                "key": "endDate",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "center"
+            }
+        ],
         "mobileBreakpoint": "sm",
         "mobileBreakpointType": "defaults",
         "action": "replace",
@@ -852,42 +892,62 @@
         ]
     },
     {
-        "id": "eeaba8cd9c78ebc7",
-        "type": "mongodb4",
+        "id": "89ed37858fd3ac41",
+        "type": "debug",
         "z": "0bd2db54d49cbc75",
-        "clientNode": "c4bd5f065e06f4ad",
-        "mode": "collection",
-        "collection": "trips",
-        "operation": "find",
-        "output": "forEach",
-        "maxTimeMS": "0",
-        "handleDocId": false,
-        "name": "",
-        "x": 350,
-        "y": 680,
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3c6fab748b69c78c",
+        "type": "link out",
+        "z": "0bd2db54d49cbc75",
+        "name": "Insert on table",
+        "mode": "link",
+        "links": [
+            "1fd298eafbb9e075"
+        ],
+        "x": 805,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1fd298eafbb9e075",
+        "type": "link in",
+        "z": "0bd2db54d49cbc75",
+        "name": "link in 1",
+        "links": [
+            "3c6fab748b69c78c"
+        ],
+        "x": 35,
+        "y": 740,
         "wires": [
             [
-                "3353de1004d80473"
+                "f0f1dcc95c2dd7c2"
             ]
         ]
     },
     {
-        "id": "3353de1004d80473",
+        "id": "f0f1dcc95c2dd7c2",
         "type": "change",
         "z": "0bd2db54d49cbc75",
         "name": "",
         "rules": [
             {
-                "t": "delete",
-                "p": "payload._id",
-                "pt": "msg"
-            },
-            {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "[msg.payload]",
-                "tot": "jsonata"
+                "to": "",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -895,11 +955,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 680,
+        "x": 160,
+        "y": 740,
         "wires": [
             [
-                "34c40e02a7848d54"
+                "eeaba8cd9c78ebc7"
             ]
         ]
     },
